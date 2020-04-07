@@ -181,11 +181,21 @@ areas of the website:
 
 - [docs](content/docs): Getting started, user manual, component reference
 - [download](content/download): Download Camel artifacts
-- [news](content/news): News, blogs, posts
+- [blog](content/blog): Blog posts
 - [community](content/community): Support, contributing, articles, etc.
 - [projects](content/projects): Subproject information (e.g. Camel K)
 - [security](content/security): Security information and advisories
 - [releases](content/releases): Release notes
+
+#### Adding new blog post
+
+Use the `blog` archetype to create a new markdown content file in `content/blog`:
+
+    $ yarn hugp new --kind blog blog/URL-SLUG/index.md # replace URL-SLUG with URL slug for the blog post
+
+Put a nice featured image in `content/blog/URL-SLUG/featured.png` and edit `content/blog/URL-SLUG/index.md` filling in the details.
+
+Don't forget to remove `draft: true` to publish the blog post.
 
 #### Adding new security advisory content
 
@@ -298,3 +308,10 @@ all generated sources in the project first.
     $ mvn clean package
 
 Of course this then takes some more time than an optimized rebuild (time to grab another coffee!).
+
+
+## Pull request previews are powered by Netlify
+
+This website is hosted by Apache Software foundation. Pull request previews and checks are powered by Netlify.
+
+![](https://www.netlify.com/img/global/badges/netlify-light.svg "Deploys by Netlify")
